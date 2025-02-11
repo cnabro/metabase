@@ -7,14 +7,10 @@ import CS from "metabase/css/core/index.css";
 import { parseNumberValue } from "metabase/lib/number";
 import { isNotNull } from "metabase/lib/types";
 import { UpdateFilterButton } from "metabase/parameters/components/UpdateFilterButton";
-import {
-  Footer,
-  TokenFieldWrapper,
-  WidgetLabel,
-  WidgetRoot,
-} from "metabase/parameters/components/widgets/Widget.styled";
 import { MultiAutocomplete } from "metabase/ui";
 import type { Parameter, ParameterValue } from "metabase-types/api";
+
+import { Footer, TokenFieldWrapper, WidgetLabel, WidgetRoot } from "../Widget";
 
 export type NumberInputWidgetProps = {
   value: number[] | undefined;

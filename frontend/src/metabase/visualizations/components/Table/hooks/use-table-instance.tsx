@@ -302,11 +302,7 @@ export const useTableInstance = <TData, TValue>({
 
   useColumnResizeObserver(table.getState(), handleColumnResize);
 
-  const columnsReordering = useColumnsReordering(
-    gridRef,
-    table,
-    onColumnReorder,
-  );
+  const columnsReordering = useColumnsReordering(table, onColumnReorder);
 
   return {
     table,

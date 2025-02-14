@@ -1,3 +1,4 @@
+import { Button, Icon } from "metabase/ui";
 import type { UiParameter } from "metabase-lib/v1/parameters/types";
 import type {
   ClickBehavior,
@@ -79,20 +80,25 @@ export function ClickBehaviorSidebarMainView({
   return (
     <>
       <SidebarContent className={S.SidebarContentBordered}>
-        <SidebarItem.Selectable
-          onClick={handleShowTypeSelector}
-          isSelected
-          padded={false}
-        >
-          <SidebarItem.Icon
-            className={S.SelectedClickBehaviorItemIcon}
-            name={currentOption?.icon || "unknown"}
-          />
-          <SidebarItem.Content>
+        <Button.Group>
+          <Button
+            onClick={handleShowTypeSelector}
+            justify="flex-start"
+            leftSection={<Icon name={currentOption?.icon || "unknown"} />}
+            size="lg"
+            variant="filled"
+            flex="1 0 auto"
+          >
             <SidebarItem.Name>{clickBehaviorOptionName}</SidebarItem.Name>
-            <SidebarItem.CloseIcon />
-          </SidebarItem.Content>
-        </SidebarItem.Selectable>
+          </Button>
+          <Button
+            onClick={handleShowTypeSelector}
+            miw="3rem"
+            size="lg"
+            variant="filled"
+            rightSection={<Icon name="close" />}
+          />
+        </Button.Group>
       </SidebarContent>
 
       <ClickBehaviorOptions

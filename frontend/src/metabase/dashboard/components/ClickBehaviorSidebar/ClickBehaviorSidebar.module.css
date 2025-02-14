@@ -5,20 +5,9 @@
   margin-bottom: 16px;
 }
 
-.SidebarContent {
-  padding-left: 32px;
-  padding-right: 32px;
-}
-
 .SidebarContentBordered {
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--mb-color-border);
-
-  /* increase specificity */
-  .SelectedClickBehaviorItemIcon {
-    border-color: transparent;
-    padding-left: 12px;
-  }
 }
 
 .Heading {

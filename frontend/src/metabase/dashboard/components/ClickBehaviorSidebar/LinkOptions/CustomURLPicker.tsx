@@ -5,10 +5,10 @@ import { t } from "ttag";
 import InputBlurChange from "metabase/components/InputBlurChange";
 import ModalContent from "metabase/components/ModalContent";
 import ModalWithTrigger from "metabase/components/ModalWithTrigger";
-import Button from "metabase/core/components/Button";
+import DeprecatedButton from "metabase/core/components/Button";
 import CS from "metabase/css/core/index.css";
 import { isTableDisplay } from "metabase/lib/click-behavior";
-import { Box } from "metabase/ui";
+import { Box, Button, Icon } from "metabase/ui";
 import type { UiParameter } from "metabase-lib/v1/parameters/types";
 import { clickBehaviorIsValid } from "metabase-lib/v1/parameters/utils/click-behavior";
 import type {
@@ -69,15 +69,26 @@ export function CustomURLPicker({
     <ModalWithTrigger
       isInitiallyOpen={!hasLinkTemplate}
       triggerElement={
-        <SidebarItem.Selectable isSelected padded={false}>
-          <SidebarItem.Icon ml="sm" className={S.PickerIcon} name="link" />
-          <SidebarItem.Content>
-            <SidebarItem.Name className={S.PickerItemName}>
+        <Button.Group>
+          <Button
+            justify="flex-start"
+            leftSection={<Icon name="link" />}
+            size="lg"
+            variant="filled"
+            flex="1 0 auto"
+          >
+            <SidebarItem.Name>
               {hasLinkTemplate ? clickBehavior.linkTemplate : t`URL`}
             </SidebarItem.Name>
-            <SidebarItem.CloseIcon onClick={handleReset} />
-          </SidebarItem.Content>
-        </SidebarItem.Selectable>
+          </Button>
+          <Button
+            onClick={handleReset}
+            miw="3rem"
+            size="lg"
+            variant="filled"
+            rightSection={<Icon name="close" />}
+          />
+        </Button.Group>
       }
     >
       {({ onClose }: { onClose: () => void }) => (
@@ -102,7 +113,7 @@ export function CustomURLPicker({
             />
           )}
           <ValuesYouCanReference dashcard={dashcard} parameters={parameters} />
-          <Button
+          <DeprecatedButton
             className={S.DoneButton}
             primary
             type="button"
@@ -111,7 +122,7 @@ export function CustomURLPicker({
               onClose();
             }}
             disabled={!canSelect}
-          >{t`Done`}</Button>
+          >{t`Done`}</DeprecatedButton>
         </ModalContent>
       )}
     </ModalWithTrigger>

@@ -1139,7 +1139,7 @@ describe("scenarios > question > custom column > help text", () => {
   });
 
   it("should not disappear when clicked on (metabase#17548)", () => {
-    H.enterCustomColumnDetails({ formula: "rou{enter}", blur: false });
+    H.enterCustomColumnDetails({ formula: "round(", blur: false });
 
     H.CustomExpressionEditor.helpText()
       .should("be.visible")

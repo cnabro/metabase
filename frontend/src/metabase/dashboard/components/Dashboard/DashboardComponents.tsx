@@ -73,8 +73,23 @@ export const FIXED_WIDTH = "1048px";
 export const FixedWidthContainer = (
   props: BoxProps & { children?: React.ReactNode; isFixedWidth?: boolean },
 ) => {
-  const { className, ...rest } = props;
-  return <Box className={cx(S.FixedWidthContainer, className)} {...rest} />;
+  const { className, isFixedWidth, style, ...rest } = props;
+  return (
+    <Box
+      className={cx(
+        S.FixedWidthContainer,
+        {
+          [S.isFixedWidth]: isFixedWidth,
+        },
+        className,
+      )}
+      style={{
+        ...style,
+        "--fixed-width": FIXED_WIDTH,
+      }}
+      {...rest}
+    />
+  );
 };
 
 export const ParametersFixedWidthContainer = (

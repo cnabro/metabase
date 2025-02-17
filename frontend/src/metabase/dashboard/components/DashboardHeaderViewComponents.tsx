@@ -8,7 +8,11 @@ import { FixedWidthContainer } from "./Dashboard/DashboardComponents";
 import S from "./DashboardHeaderView.module.css";
 
 export const HeaderFixedWidthContainer = (
-  props: BoxProps & { isNavBarOpen?: boolean; children?: React.ReactNode },
+  props: BoxProps & {
+    isNavBarOpen?: boolean;
+    children?: React.ReactNode;
+    isFixedWidth?: boolean;
+  },
 ) => {
   const { isNavBarOpen, className, ...rest } = props;
 

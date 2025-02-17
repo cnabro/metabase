@@ -3,8 +3,7 @@
 
   &.isFixedWidth {
     margin: 0 auto;
-    /* FIXED_WIDTH */
-    max-width: 1048px;
+    max-width: var(--fixed-width);
   }
 
   /* SAVING_DOM_IMAGE_CLASS */

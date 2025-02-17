@@ -185,6 +185,7 @@ export function DashboardHeaderView({
             <HeaderFixedWidthContainer
               data-testid="fixed-width-dashboard-header"
               isNavBarOpen={isNavBarOpen}
+              isFixedWidth={dashboard?.width === "fixed"}
             >
               <Box
                 className={cx(S.HeaderContent, {
@@ -244,6 +245,7 @@ export function DashboardHeaderView({
           <HeaderFixedWidthContainer
             data-testid="fixed-width-dashboard-tabs"
             isNavBarOpen={isNavBarOpen}
+            isFixedWidth={dashboard?.width === "fixed"}
           >
             <DashboardTabs dashboardId={dashboard.id} isEditing={isEditing} />
           </HeaderFixedWidthContainer>

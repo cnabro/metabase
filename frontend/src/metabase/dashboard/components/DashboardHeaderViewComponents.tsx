@@ -26,10 +26,9 @@ export const HeaderFixedWidthContainer = (
   );
 };
 
-// eslint-disable-next-line react/display-name
 export const HeaderRow = forwardRef<
   HTMLDivElement,
   BoxProps & { children?: React.ReactNode }
->((props, ref) => {
+>(function HeaderRow(props, ref) {
   return <FullWidthContainer ref={ref} className={S.HeaderRow} {...props} />;
 });

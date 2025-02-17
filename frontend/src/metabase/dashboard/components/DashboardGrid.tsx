@@ -74,7 +74,8 @@ import { AddSeriesModal } from "./AddSeriesModal/AddSeriesModal";
 import { DashCard } from "./DashCard/DashCard";
 import DashCardS from "./DashCard/DashCard.module.css";
 import { FIXED_WIDTH } from "./Dashboard/DashboardComponents";
-import { DashboardCardContainer } from "./DashboardGrid.styled";
+import S from "./DashboardGrid.module.css";
+import { DashboardCardContainer } from "./DashboardGridComponents";
 import { GridLayout } from "./grid/GridLayout";
 
 type GridBreakpoint = "desktop" | "mobile";
@@ -536,6 +537,7 @@ class DashboardGridInner extends Component<
   ) {
     return (
       <DashCard
+        className={S.DashboardGridCard}
         dashcard={dashcard}
         slowCards={this.props.slowCards}
         gridItemWidth={gridItemWidth}
@@ -612,9 +614,10 @@ class DashboardGridInner extends Component<
           LegendS.DashCard,
           {
             [DashboardS.BrandColorResizeHandle]: shouldChangeResizeHandle,
+            [S.isAnimationDisabled]: this.state.isAnimationPaused,
           },
+          S.DashboardCardContainer,
         )}
-        isAnimationDisabled={this.state.isAnimationPaused}
       >
         {this.renderDashCard(dc, {
           isMobile: breakpoint === "mobile",

@@ -32,6 +32,7 @@ import { FixedWidthContainer } from "../components/Dashboard/DashboardComponents
 import { useDashboardUrlQuery } from "../hooks/use-dashboard-url-query";
 
 import S from "./AutomaticDashboardApp.module.css";
+import { XrayIcon } from "./XrayIcon";
 
 const getDashboardId = (state, { params: { splat }, location: { hash } }) =>
   `/auto/dashboard/${splat}${hash.replace(/^#?/, "?")}`;
@@ -128,7 +129,7 @@ class AutomaticDashboardAppInner extends Component {
                   isFixedWidth={dashboard?.width === "fixed"}
                 >
                   <div className={cx(CS.flex, CS.alignCenter, CS.py2)}>
-                    <Icon className={S.XrayIcon} name="bolt" size={24} />
+                    <XrayIcon />
                     <div>
                       <h2 className={cx(CS.textWrap, CS.mr2)}>
                         {dashboard && <TransientTitle dashboard={dashboard} />}

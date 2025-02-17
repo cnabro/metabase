@@ -43,7 +43,6 @@
   }
 
   &.isUsuallySlow {
-    /* border-color: ${theme.fn.themeColor("accent4")}; */
     border-color: var(--dashcard-slow-border-color);
   }
 }
